@@ -1,0 +1,132 @@
+
+
+.HeaderSection{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 3px 5px -1px rgba(222,219,222,0.88);
+}
+
+.HeaderSection>div{
+    display: flex;
+}
+
+.HeaderSection > h1{
+    color: rgb(28, 159, 247);
+    font-size: 26px;
+}
+
+.SearchSection{
+    border: 1.5px solid lightgray;
+    padding: 5px 10px 5px 5px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.SearchSection>i:nth-child(1){
+    color: lightgray;
+    padding: 0px 5px;
+}
+
+
+.SearchSection>input{
+    border: none;
+    outline: none;
+    padding: 5px;
+    min-width: 500px;
+}
+
+.SearchSection>input::placeholder{
+    color: rgb(170, 168, 168);
+}
+
+.arrow {
+    border: solid lightgray;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+
+.down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+}
+
+.BtnBig{
+    padding: 10px 17px;
+    width: fit-content;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    background-color: rgb(28, 159, 247);
+}
+
+.Dot{
+    height: 17px;
+    width: 17px;
+    background-color:rgb(158, 158, 158);
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.BodySection{
+    display: flex;
+}
+
+.NewsListSection{
+    padding: 10px 20px;
+    border-right: 1px solid rgb(221, 221, 221);
+    width: 35%;
+    min-width: 350px;
+    text-align: left;
+}
+
+.eachArticle{
+    padding: 5px 0px;
+    font-size: 16px;
+    color: rgb(146, 145, 145);
+    border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.eachArticle>p:nth-child(2){
+    color: black;
+}
+
+.eachArticle>p{
+    margin-bottom: 6px;
+    margin-top: 6px;
+}
+
+.articleBottom{
+    display: flex;
+    align-items: center;
+    margin-bottom: 13px;
+}
+
+.MainNewsSection{
+    padding: 80px 120px;
+    font-size: 13px;
+    color: rgb(65, 65, 65);
+    text-align: left;
+    width: 60%;
+}
+
+.MainNewsSection>div:nth-child(2){
+    display: flex;
+    justify-content: space-between;
+    /* font-size: 15px; */
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgb(224, 224, 224);
+}
+
+.MainNewsTitle{
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.NewsBody{
+    padding: 20px 2px;
+}
