@@ -60,6 +60,7 @@
     outline: none;
     color: white;
     background-color: rgb(28, 159, 247);
+    cursor: pointer;
 }
 
 .Dot{
@@ -76,12 +77,12 @@
 }
 
 .NewsListSection{
-    padding: 70px 0px 10px 0px;
+    padding: 1px 0px 10px 0px;
     border-right: 1px solid rgb(221, 221, 221);
     /* width: 30%; */
     width: 400px;
     text-align: left;
-    max-height: 460px;
+    max-height: 525px;
     overflow-y: scroll;
 }
 
@@ -187,13 +188,13 @@
 
 .DateRangeInputSection{
     display: flex;
-    padding: 27px 20px 7px 20px;
+    padding: 10px 20px 7px 20px;
     border-bottom: 1.5px solid lightgray;
     /* border-radius: 5px; */
     justify-content: space-between;
-    position: absolute;
-    top: 70px;
-    width: 311px;
+    position: sticky;
+    top: 0px;
+    /* width: 311px; */
 
     background-color: white;
 }
@@ -206,7 +207,7 @@
     display: none;
     z-index: 1;
     position: absolute;
-    top:137px;
+    top:120px;
     background-color: white;
     box-shadow: 0px 3px 5px -1px rgba(222,219,222,0.88);
 }
@@ -226,4 +227,143 @@
     color: white;
     background-color: rgb(28, 159, 247);
     cursor: pointer;
+}
+
+.OuterModalContainer{
+    /* display: none; */
+    background-color: rgba(82, 82, 82, 0.322);
+    width: 100%;
+    min-height: 620px;
+    position: absolute;
+    z-index: 4;
+}
+
+.ModalContainer{
+    padding: 0px;
+    width: 50%;
+    background-color: white;
+    position: absolute;
+    top:180px;
+    left: 25%;
+    right: auto;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+    z-index: 5;
+}
+
+.ModalHeader{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 13px 20px;
+    border-bottom: 1px solid rgb(231, 231, 231);
+}
+
+.ModalHeader>h5{
+    margin: 0px;
+}
+
+.ModalBodyContainer{
+    padding: 15px;
+}
+
+.ModalBodyContainer>div:nth-child(1){
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+}
+
+.ModalBottomContainer{
+    padding: 13px;
+    border-top: 1px solid rgb(231, 231, 231);
+    display: flex;
+    justify-content: space-between;
+}
+
+.ModalBottomContainer>button{
+    font-size: 12px;
+}
+
+.Close{
+    cursor: pointer;
+}
+
+.BtnMedium{
+    padding: 7px 17px;
+    width: fit-content;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    background-color: rgb(28, 159, 247);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+.BtnCancel{
+    padding: 7px 17px;
+    width: fit-content;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    background-color: rgb(235, 235, 235);
+    cursor: pointer;
+}
+
+.AddFilter{
+    padding: 7px 27px;
+    width: fit-content;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+    border: 1.5px solid rgb(28, 159, 247);
+    cursor: pointer;
+    font-size: 12px;
+}
+.FilterSection{
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.FilterSection>select{
+    padding: 6px 50px;
+    width: fit-content;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    background-color: transparent;
+    border: 1.5px solid rgb(28, 159, 247);
+    cursor: pointer;
+    font-size: 12px;
+}
+.FilterSection>div:nth-child(2){
+    display: flex;
+    flex-basis: 67%;
+}
+
+.inputSearchSection>input{
+    padding: 3px 10px;
+    font-size: 12px;
+    outline: none;
+    width: 100%;
+    border-radius: 5px;
+    border: 1.5px solid rgb(202, 202, 202);
+}
+
+.inputSearchSection>span{
+    padding-right: 20px;
+}
+
+.autoSuggestion{
+    display: none;
+    position: absolute;
+    z-index: 7;
+    background-color: white;
+    margin-top: 28px;
+    margin-left: 31px;
+    padding: 20px;
+    width: 330px;
+    border:1px solid lightgray;
 }

@@ -7,7 +7,7 @@ import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
 import calendarIcon from './calendar.png';
 
-function LandingPage() {
+const LandingPage = ()=>{
     const apikey =`qoPtuQnVcBJqgv5YJp1nJsXrX1RlkAd0`;
     const monthsArray = ['January','February','March','April','May','June','July','August','September','October','November','December']
     const [newsResponse, setnewsResponse] = useState({});
@@ -23,8 +23,10 @@ function LandingPage() {
     const [startDate, setstartDate] = useState(null);
     const [endDate, setendDate] = useState(null);
     const [nextPage, setnextPage] = useState('');
+    const [isModalVisibile, setisModalVisibile] = useState(false);
+    const [filterCount, setfilterCount] = useState(1);
 
-    let qparam = `?x-api-key=${apikey}&q=${searchQuery}`;
+    // let qparam = `?x-api-key=${apikey}&q=${searchQuery}`;
     
     const getQueryParams = () => {
         let startDateQparam = (startDate!==null)?`&start_date=${startDate}`:'';
@@ -99,9 +101,6 @@ function LandingPage() {
             </div>
         </div>;
 
-    // console.log("date range start >",dateRangeState[0].startDate.toLocaleDateString());
-    // console.log("date range end >",dateRangeState[0].endDate.toLocaleDateString());
-
     const setDateQueryParam = () =>{
         let startDate = getRequestFormatDate(dateRangeState[0].startDate.toLocaleDateString());
         let endDate = getRequestFormatDate(dateRangeState[0].endDate.toLocaleDateString());
@@ -109,6 +108,38 @@ function LandingPage() {
         setstartDate(startDate);
         setendDate(endDate);
         document.getElementById('DateRangeSelector').style.display='none';
+    }
+
+    const getFilterSection = () => {
+        
+        return (
+        <>
+            {[...Array(filterCount)].map((index) => (
+                <div className={classes.FilterSection} key={index}>
+                    <select name="cars" id="cars">
+                        <option value="Category">Category</option>
+                        <option value="Sentiment">Sentiment</option>
+                        <option value="Source">Source</option>
+                    </select>
+                    <div className={classes.inputSearchSection}>
+                        <span>{' is '}</span>
+                        <input placeholder="Search ..." />
+                        <div className={classes.autoSuggestion}>
+                            hello
+                        </div>
+                    </div>
+                </div>
+            ))}
+        </>
+        )
+    }
+
+    const getMainFilterSection = () => {
+        // let view='';
+        // for(let i=0;i<filterCount;i++){
+        //     view = getFilterSection();
+        // }
+        // return view;
     }
 
     if(Object.keys(newsResponse).length>0){
@@ -180,6 +211,26 @@ function LandingPage() {
 
     return (
         <div>
+            {isModalVisibile && 
+            <div className={classes.OuterModalContainer}>
+                <div className={classes.ModalContainer}>
+                    <div className={classes.ModalHeader}>
+                        <h5>Advanced Search</h5>
+                        <span className={classes.Close} onClick={() => setisModalVisibile(false)}>{' X '}</span>
+                    </div>
+                    <div className={classes.ModalBodyContainer}>
+                        <div>
+                            <button className={classes.AddFilter} onClick={() => setfilterCount(filterCount+1)}
+                            >Add New Filter</button>
+                        </div>
+                        {getFilterSection()}
+                    </div>
+                    <div className={classes.ModalBottomContainer}>
+                        <button className={classes.BtnCancel} onClick={() => setisModalVisibile(false)}>Cancel</button>
+                        <button className={classes.BtnMedium}onClick={() => setisModalVisibile(false)}>Show Results</button>
+                    </div>
+                </div>
+            </div>}
             {/* Header Section */}
             <div className={classes.HeaderSection}>
                 <h1>NewsReader</h1>
@@ -193,7 +244,7 @@ function LandingPage() {
                     }/>
                     <i className={[classes.arrow, classes.down].join(" ")}></i>
                 </div>
-                <button className={classes.BtnBig}>Advanced Search</button>
+                <button className={classes.BtnBig} onClick={() => setisModalVisibile(true)}>Advanced Search</button>
                 </div>
             </div>
         
