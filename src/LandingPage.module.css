@@ -65,10 +65,10 @@
 .Dot{
     height: 17px;
     width: 17px;
-    background-color:rgb(158, 158, 158);
     border-radius: 50%;
     display: inline-block;
     margin-right: 8px;
+    margin-top: 4px;
 }
 
 .BodySection{
@@ -76,18 +76,44 @@
 }
 
 .NewsListSection{
-    padding: 10px 20px;
+    padding: 70px 0px 10px 0px;
     border-right: 1px solid rgb(221, 221, 221);
-    width: 35%;
-    min-width: 350px;
+    /* width: 30%; */
+    width: 400px;
     text-align: left;
+    max-height: 460px;
+    overflow-y: scroll;
 }
 
+.NewsListSection>button{
+    margin-left: 10px;
+}
+
+.NewsListSection::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  .NewsListSection::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px transparent;
+  }
+   
+  .NewsListSection::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    outline: 1px solid transparent;
+  }
+  .NewsListSection:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(230, 227, 227);
+  }
+
 .eachArticle{
-    padding: 5px 0px;
+    padding: 5px 20px;
     font-size: 16px;
     color: rgb(146, 145, 145);
     border-bottom: 1px solid rgb(228, 228, 228);
+}
+
+.eachArticle:hover{
+    background-color: rgb(235, 232, 232);
 }
 
 .eachArticle>p:nth-child(2){
@@ -99,6 +125,10 @@
     margin-top: 6px;
 }
 
+.eachArticle:hover{
+    cursor: pointer;
+}
+
 .articleBottom{
     display: flex;
     align-items: center;
@@ -106,12 +136,30 @@
 }
 
 .MainNewsSection{
-    padding: 80px 120px;
+    padding: 80px 120px 0px 120px;
     font-size: 13px;
     color: rgb(65, 65, 65);
     text-align: left;
     width: 60%;
+    max-height: 460px;
+    overflow-y: scroll;
 }
+
+.MainNewsSection::-webkit-scrollbar {
+    width: 5px;
+  }
+   
+  .MainNewsSection::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px transparent;
+  }
+   
+  .MainNewsSection::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    outline: 1px solid transparent;
+  }
+  .MainNewsSection:hover::-webkit-scrollbar-thumb {
+    background-color: rgb(230, 227, 227);
+  }
 
 .MainNewsSection>div:nth-child(2){
     display: flex;
@@ -129,4 +177,53 @@
 
 .NewsBody{
     padding: 20px 2px;
+    line-height: 25px;
+}
+
+.calendarIcon{
+    width: 26px;
+    cursor: pointer;
+}
+
+.DateRangeInputSection{
+    display: flex;
+    padding: 27px 20px 7px 20px;
+    border-bottom: 1.5px solid lightgray;
+    /* border-radius: 5px; */
+    justify-content: space-between;
+    position: absolute;
+    top: 70px;
+    width: 311px;
+
+    background-color: white;
+}
+
+.DateRangeInputSection>p{
+    margin: 2px;
+}
+
+.DateRangeSection{
+    display: none;
+    z-index: 1;
+    position: absolute;
+    top:137px;
+    background-color: white;
+    box-shadow: 0px 3px 5px -1px rgba(222,219,222,0.88);
+}
+
+.DateRangeBtn{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.BtnMedium{
+    padding: 7px 9px;
+    width: fit-content;
+    border:none;
+    border-radius: 5px;
+    outline: none;
+    color: white;
+    background-color: rgb(28, 159, 247);
+    cursor: pointer;
 }
